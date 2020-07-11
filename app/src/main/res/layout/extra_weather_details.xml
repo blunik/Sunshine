@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/extra_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/detail_accent_pane_background"
+        android:paddingBottom="@dimen/forecast_detail_vertical_padding"
+        android:paddingEnd="@dimen/forecast_detail_horizontal_padding"
+        android:paddingLeft="@dimen/forecast_detail_horizontal_padding"
+        android:paddingRight="@dimen/forecast_detail_horizontal_padding"
+        android:paddingStart="@dimen/forecast_detail_horizontal_padding"
+        android:paddingTop="@dimen/forecast_detail_vertical_padding">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <TextView
+            android:id="@+id/humidity_label"
+            android:text="@string/humidity_label"
+            style="@style/DetailLabel"
+            app:layout_constraintBottom_toTopOf="@+id/pressure_label"
+            app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+            app:layout_constraintTop_toTopOf="@+id/extra_details"
+            app:layout_constraintVertical_bias="0.33"/>
+
+        <TextView
+            android:id="@+id/humidity"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/humidity_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+            tools:text="38%"/>
+
+        <TextView
+            android:id="@+id/pressure_label"
+            android:text="@string/pressure_label"
+            style="@style/DetailLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/extra_details"
+            app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+            app:layout_constraintTop_toTopOf="@+id/extra_details"/>
+
+        <TextView
+            android:id="@+id/pressure"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/pressure_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+            tools:text="995 hPa"/>
+
+        <TextView
+            android:id="@+id/wind_label"
+            style="@style/DetailLabel"
+            android:text="@string/wind_label"
+            app:layout_constraintBottom_toBottomOf="@+id/extra_details"
+            app:layout_constraintLeft_toLeftOf="@+id/extra_details"
+            app:layout_constraintTop_toBottomOf="@+id/pressure_label"
+            app:layout_constraintVertical_bias="0.65999997"/>
+
+        <TextView
+            android:id="@+id/wind_measurement"
+            style="@style/ExtraWeatherMeasurement"
+            app:layout_constraintBottom_toBottomOf="@+id/wind_label"
+            app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
+            tools:text="4km/h NW"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
